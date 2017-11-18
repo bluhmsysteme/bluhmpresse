@@ -25,7 +25,7 @@ return array(
             'endtime' => 'endtime',
         ),
         'searchFields' => 'name,',
-        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_bluhmpresse_domain_model_area.gif'
+        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('bluhmpresse') . 'Resources/Public/Icons/tx_bluhmpresse_domain_model_area.gif'
     ),
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, page',
