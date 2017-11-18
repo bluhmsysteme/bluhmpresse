@@ -3,8 +3,30 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-$TCA['tx_bluhmpresse_domain_model_image'] = array(
-	'ctrl' => $TCA['tx_bluhmpresse_domain_model_image']['ctrl'],
+return array(
+    'ctrl' => array(
+        'title'	=> 'LLL:EXT:bluhmpresse/Resources/Private/Language/locallang_db.xlf:tx_bluhmpresse_domain_model_image',
+        'label' => 'title',
+        'tstamp' => 'tstamp',
+        'crdate' => 'crdate',
+        'cruser_id' => 'cruser_id',
+        'dividers2tabs' => TRUE,
+
+        'versioningWS' => 2,
+        'versioning_followPages' => TRUE,
+        'origUid' => 't3_origuid',
+        'languageField' => 'sys_language_uid',
+        'transOrigPointerField' => 'l10n_parent',
+        'transOrigDiffSourceField' => 'l10n_diffsource',
+        'delete' => 'deleted',
+        'enablecolumns' => array(
+            'disabled' => 'hidden',
+            'starttime' => 'starttime',
+            'endtime' => 'endtime',
+        ),
+        'searchFields' => 'image_date,title,source,image72,image300,industries,technologies,themes,',
+        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_bluhmpresse_domain_model_image.gif'
+    ),
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, image_date, title, source, image72, industries, technologies, themes',
 	),
