@@ -9,6 +9,7 @@ namespace Mkuehnel\Bluhmpresse\ViewHelpers;
  * @version
  */
 class ArticleFirstImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+
 	
 	/**
 	 * imageRepository
@@ -17,6 +18,7 @@ class ArticleFirstImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstr
 	 * @inject
 	 */
 	protected $imageRepository;
+    protected $escapeOutput = false;
 
     /**
      * Renders some classic dummy content: Lorem Ipsum...

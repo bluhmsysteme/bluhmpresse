@@ -30,7 +30,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 			<div class="bp-list-item article">
 				<bp:articleFirstImage imageIds="{article.relatedImages}" as="image">
 					<f:if condition="{image}">
-						<img src="{f:uri.image(src:'uploads/tx_bluhmpresse/{image.image72}' width:'143c' height:'143c')}">
+						<f:image src="uploads/tx_bluhmpresse/{image.image72}" width="140c" height="140c" />
 					</f:if>
 				</bp:articleFirstImage>
 				<div>

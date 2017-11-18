@@ -17,6 +17,7 @@ class ArticleViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHel
 	 * @inject
 	 */
 	protected $articleRepository;
+    protected $escapeOutput = false;
 
     /**
      * Renders some classic dummy content: Lorem Ipsum...
