@@ -1,0 +1,74 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+{namespace bp=Tx_Bluhmpresse_ViewHelpers}
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+	<div class="bp-item-detail article">
+		<f:flashMessages />
+
+		<script>
+			if(document.referrer && document.referrer.indexOf('<f:uri.page />') != -1) {
+				document.write('<h3><span><a href="' + document.referrer + '"><< Zurück zur Übersicht</a></span></h3>');
+			}
+		</script>
+
+		<div class="bp-item-headline">
+			<span class="bp-item-date"><f:format.date format="d.m.Y">{article.articleDate}</f:format.date></span><span class="bp-item-title">{article.title}</span>
+		</div>
+
+		<div class="bp-item-bodytext">
+			<f:format.html>{article.bodytext}</f:format.html>
+		</div>
+	</div>
+
+	<h4><span>Pressebilder & Downloads</span></h4>
+	<f:for each="{v:iterator.explode(content: article.relatedImages, glue: ',')}" as="imageUid">
+		<bp:image uid="{imageUid}" as="image">
+			<div class="bp-list-item download">
+				<img src="{f:uri.image(src:'uploads/tx_bluhmpresse/{image.image72}' width:'130c' height:'130c')}">
+				<div class="bp-item-title">
+                    <p>{image.title}</p>
+				</div>
+                <a href="/uploads/tx_bluhmpresse/{image.image72}" target="_blank"><strong>Download</strong></a>
+			</div>
+		</bp:image>
+	</f:for>
+
+	<f:if condition="{article.pdfFile}">
+		<div class="bp-list-item download">
+			<f:image src="EXT:bluhmpresse/Resources/Public/img/icon-pdf.jpg" alt="" />
+			<div class="bp-item-title">
+                <p>{article.title}</p>
+			</div>
+            <a href="/uploads/tx_bluhmpresse/{article.pdfFile}" target="_blank"><strong>Download</strong></a>
+		</div>
+	</f:if>
+	<f:if condition="{article.txtFile}">
+		<div class="bp-list-item download">
+			<f:image src="EXT:bluhmpresse/Resources/Public/img/icon-txt.jpg" alt="" />
+			<div class="bp-item-title">
+				<p>{article.title}</p>
+			</div>
+            <a href="/uploads/tx_bluhmpresse/{article.txtFile}" target="_blank"><strong>Download</strong></a>
+		</div>
+	</f:if>
+
+	<f:if condition="{article.links}">
+		<h4><span>Weiterführende Links</span></h4>
+		<div class="bp-links">
+			<f:format.html>{article.links}</f:format.html>
+		</div>
+	</f:if>
+</f:section>

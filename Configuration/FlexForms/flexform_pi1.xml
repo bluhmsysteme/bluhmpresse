@@ -1,0 +1,116 @@
+<T3DataStructure>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Function</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<switchableControllerActions>
+						<TCEforms>
+							<label>Darstellung</label>
+							<onChange>reload</onChange>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0">
+										<numIndex index="0"> -- Bitte wählen --</numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">Pressemeldungen</numIndex>
+										<numIndex index="1">Article->list;Article->show</numIndex>
+									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">Pressebilder</numIndex>
+										<numIndex index="1">Image->list;Image->show</numIndex>
+									</numIndex>
+									<numIndex index="3">
+										<numIndex index="0">Suchbox</numIndex>
+										<numIndex index="1">General->searchbox</numIndex>
+									</numIndex>
+									<numIndex index="4">
+										<numIndex index="0">Pressebild Detailansicht</numIndex>
+										<numIndex index="1">Image->show</numIndex>
+									</numIndex>
+									<numIndex index="5">
+										<numIndex index="0">Presse CD</numIndex>
+										<numIndex index="1">PresseCD->download</numIndex>
+									</numIndex>									
+								</items>
+							</config>
+						</TCEforms>
+					</switchableControllerActions>
+					<settings.filter.area>
+					  <TCEforms>
+						<label>Bereich</label>
+						<displayCond>FIELD:switchableControllerActions:=:Article->list;Article->show</displayCond>
+						<config>
+							<type>select</type>
+							<foreign_table>tx_bluhmpresse_domain_model_area</foreign_table>
+							<size>1</size>
+							<maxitems>1</maxitems>
+							<minitems>1</minitems>
+							<show_thumbs>1</show_thumbs>
+							<default></default>
+						</config>
+					   </TCEforms>
+					</settings.filter.area>
+					<settings.searchBoxPages>
+					  <TCEforms>
+						<label>Suchbox Seiten</label>
+						<displayCond>FIELD:switchableControllerActions:=:General->searchbox</displayCond>
+						<config>
+							<type>select</type>
+							<foreign_table>pages</foreign_table>
+							<foreign_table_where>AND uid IN(
+								SELECT pid FROM tt_content WHERE list_type = 'bluhmpresse_pi1'
+							)</foreign_table_where>
+							<size>4</size>
+							<maxitems>99</maxitems>
+							<minitems>1</minitems>
+							<show_thumbs>1</show_thumbs>
+							<default></default>
+						</config>
+					   </TCEforms>
+					</settings.searchBoxPages>
+					<settings.imageDetailPid>
+					  <TCEforms>
+						<label>Pressebild Detailseite</label>
+						<displayCond>FIELD:switchableControllerActions:=:Image->list;Image->show</displayCond>
+						<config>
+							<type>select</type>
+							<foreign_table>pages</foreign_table>
+							<foreign_table_where>AND uid IN(
+								SELECT pid FROM tt_content WHERE list_type = 'bluhmpresse_pi1'
+							)</foreign_table_where>
+							<size>1</size>
+							<maxitems>1</maxitems>
+							<minitems>1</minitems>
+							<show_thumbs>1</show_thumbs>
+							<default></default>
+						</config>
+					   </TCEforms>
+					</settings.imageDetailPid>
+					<settings.articels>
+						<TCEforms>
+							<label>Artikel</label>
+							<displayCond>FIELD:switchableControllerActions:=:PresseCD->download</displayCond>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>tx_bluhmpresse_domain_model_article</allowed>
+								<size>10</size>
+								<maxitems>50</maxitems>
+								<minitems>1</minitems>
+								<show_thumbs>1</show_thumbs>
+								<default></default>
+							</config>
+						</TCEforms>		
+					</settings.articels>					
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

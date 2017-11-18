@@ -1,0 +1,44 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="main">
+	<h3>
+		<span>Pressesuche</span>
+	</h3>
+	<f:form name="filter" id="searchBox" object="{searchFilter}">
+		<legend>
+			Suche in:
+		</legend>
+		<v:page.menu.list pages="{settings.searchBoxPages}" showHiddenInMenu="true" as="pages">
+			<f:for each="{pages}" as="page" key="pageUid" iteration="itemIteration">
+				<f:if condition="{itemIteration.isFirst}">
+					<f:then>
+						<input type="radio" name="action" value="{f:uri.page(pageUid: pageUid)}" checked="checked"> {page.title}<br>
+					</f:then>
+					<f:else>
+						<input type="radio" name="action" value="{f:uri.page(pageUid: pageUid)}"> {page.title}<br>
+					</f:else>
+				</f:if>
+		    </f:for>
+		</v:page.menu.list>
+		<div class="powermail_fieldwrap input-keyword">
+			<f:form.textfield property="keyword" placeholder="Suchbegriff eingeben" />
+		</div>
+		<legend>
+			Suchergebnis filtern nach:
+		</legend>
+		<div class="powermail_fieldwrap">
+			<f:form.select property="industry" options="{industries}" optionValueField="uid" optionLabelField="name" prependOptionLabel="Branche" />
+		</div>
+		<div class="powermail_fieldwrap">
+			<f:form.select property="technology" options="{technologies}" optionValueField="uid" optionLabelField="name" prependOptionLabel="Technologie" />
+		</div>
+		<div class="powermail_fieldwrap">
+			<f:form.select property="theme" options="{themes}" optionValueField="uid" optionLabelField="name" prependOptionLabel="Thema" />
+		</div>
+		<div class="powermail_fieldwrap">
+			<f:form.submit name="" value="Suchen" class="powermail_submit" />
+		</div>
+	</f:form>
+</f:section>

@@ -1,0 +1,55 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+{namespace bp=Tx_Bluhmpresse_ViewHelpers}
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+<f:flashMessages />
+
+<v:page.info as="page">
+	<f:render partial="SearchForm" arguments="{_all}" />
+</v:page.info>
+
+<p></p>
+
+<f:render partial="YearNav" arguments="{years:years, searchFilter:searchFilter}" />
+
+<f:widget.paginate objects="{articles}" as="paginatedArticles" configuration="{itemsPerPage: 5, insertAbove: 0, insertBelow: 1}">
+		<f:for each="{paginatedArticles}" as="article">
+			<div class="bp-list-item article">
+				<bp:articleFirstImage imageIds="{article.relatedImages}" as="image">
+					<f:if condition="{image}">
+						<img src="{f:uri.image(src:'uploads/tx_bluhmpresse/{image.image72}' width:'143c' height:'143c')}">
+					</f:if>
+				</bp:articleFirstImage>
+				<div>
+					<div class="bp-item-headline">
+						<span class="bp-item-date"><f:format.date format="d.m.Y">{article.articleDate}</f:format.date></span><span class="bp-item-title">{article.title}</span>
+					</div>
+					<div class="bp-item-abstract">
+						{article.abstract}
+					</div>
+					<f:link.action action="show" arguments="{article : article}">Weiter zur Pressemeldung</f:link.action>
+				</div>
+				<br class="clear">
+			</div>
+		</f:for>
+		<f:if condition="{paginatedArticles -> f:count()} == 0">
+			<div class="no-results">
+				Es wurden keine Meldungen gefunden.
+			</p>
+		</f:if>
+</f:widget.paginate>
+
+</f:section>

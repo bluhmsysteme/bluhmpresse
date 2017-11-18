@@ -1,0 +1,19 @@
+{
+  "name": "mkuehnel/bluhmpresse",
+  "description": "Bluhm Presse Erweiterung",
+  "type": "typo3-cms-extension",
+  "version": "1.0.6",
+  "authors": [{
+    "name": "Moritz Kühnel"
+  }],
+  "repositories": [{
+  }],
+  "minimum-stability": "dev",
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Mkuehnel\\Bluhmpresse\\": "Classes"
+    }
+  }
+}

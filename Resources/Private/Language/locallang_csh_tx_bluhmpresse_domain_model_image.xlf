@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-03-18T15:39:37Z" product-name="bluhmpresse">
+		<header/>
+		<body>
+
+			<trans-unit id="image_date.description">
+				<source>imageDate</source>
+			</trans-unit>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="source.description">
+				<source>source</source>
+			</trans-unit>
+			<trans-unit id="image72.description">
+				<source>image72</source>
+			</trans-unit>
+			<trans-unit id="image300.description">
+				<source>image300</source>
+			</trans-unit>
+			<trans-unit id="industries.description">
+				<source>Branchen</source>
+			</trans-unit>
+			<trans-unit id="technologies.description">
+				<source>Technologien</source>
+			</trans-unit>
+			<trans-unit id="themes.description">
+				<source>Themen</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

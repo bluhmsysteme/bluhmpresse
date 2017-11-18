@@ -1,0 +1,29 @@
+<ul class="year-nav">
+	<f:for each="{years}" as="year" iteration="yearIterator">
+		<f:if condition="{yearIterator.isFirst}">
+			<f:if condition="{0: searchFilter.year} != {0: year.value}">
+				<li class="previous">
+					<a href="#"> < </a>
+				</li>
+			</f:if>
+		</f:if>
+		<f:if condition="{0:year.value} == {0:searchFilter.year}">
+			<f:then>
+				<li class="current"><span>{year.value}</span></li>
+			</f:then>
+			<f:else>
+				<li><span><f:link.action action="list" arguments="{filter: year.searchFilter}" title="{year.count} Meldungen">{year.value}</f:link.action></span</li>
+			</f:else>
+		</f:if>
+		<f:if condition="{yearIterator.isLast}">
+			<f:if condition="{0: searchFilter.year} != {0: year.value}">
+				<li class="next">
+					<a href="#"> > </a>
+				</li>
+			</f:if>
+		</f:if>
+	</f:for>
+</ul>
+<f:if condition="{years -> f:count()} > 0">
+	<br class="clear"/>
+</f:if>

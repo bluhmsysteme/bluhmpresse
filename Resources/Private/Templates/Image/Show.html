@@ -1,0 +1,40 @@
+{namespace bp=Tx_Bluhmpresse_ViewHelpers}
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+<f:section name="main">
+	<f:flashMessages />
+
+	<div class="bp-item-detail image">
+		<div class="bp-item-headline">
+			<span class="bp-item-date"><f:format.date format="d.m.Y">{image.imageDate}</f:format.date></span><span class="bp-item-title">{image.title}</span>
+		</div>
+
+		<div>
+			<img src="{f:uri.image(src:'uploads/tx_bluhmpresse/{image.image72}' width:'534c' height:'401c')}" width="534" height="401">
+		</div>
+		<f:if condition="{image.source}">
+			<div class="bp-image-source">
+				Quelle: {image.source}
+			</div>
+		</f:if>
+
+		<f:if condition="{articleRefs}">
+			<h3>Pressemitteilungen:</h3>
+			<div class="bp-links">
+			<f:for each="{articleRefs}" as="ref">
+				<bp:article uid="{ref.recuid}" as="article">
+					<bp:firstItem items="{article.areas}" as="area">
+						<f:link.action pageUid="{area.page}" controller="Article" action="show" arguments="{article : article}">{article.title}</f:link.action><br>
+					</bp:firstItem>
+				</bp:article>
+			</f:for>
+			</div>
+		</f:if>
+
+		<div class="bp-list-item download">
+			<a href="/uploads/tx_bluhmpresse/{image.image72}" target="_blank"><strong>Download</strong></a>
+		</div>
+	</div>
+</f:section>

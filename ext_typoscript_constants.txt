@@ -1,0 +1,4 @@
+
+## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
+
+<INCLUDE_TYPOSCRIPT: source=FILE:EXT:bluhmpresse/Configuration/TypoScript/constants.txt>

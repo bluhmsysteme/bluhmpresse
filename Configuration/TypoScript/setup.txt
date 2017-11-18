@@ -1,0 +1,66 @@
+plugin.tx_bluhmpresse {
+	view {
+		templateRootPath = {$plugin.tx_bluhmpresse.view.templateRootPath}
+		partialRootPath = {$plugin.tx_bluhmpresse.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_bluhmpresse.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_bluhmpresse.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+		
+		skipDefaultArguments = 1
+	}
+	
+	mvc {
+		# fix for multiple use of different switchableControllerActions plugins on one page
+		callDefaultActionIfActionCantBeResolved = 1
+	}
+}
+
+plugin.tx_bluhmpresse._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-bluhmpresse table {
+		#border-collapse:separate;
+		#border-spacing:10px;
+	}
+
+	.tx-bluhmpresse table th {
+		#font-weight:bold;
+	}
+
+	.tx-bluhmpresse table td {
+		#vertical-align:top;
+	}
+)
+
+plugin.tx_fluid._LOCAL_LANG {
+	default {
+    	widget.pagination.previous = <
+        widget.pagination.next = >
+    }
+}
+plugin.tx_fluid._LOCAL_LANG.de < plugin.tx_fluid._LOCAL_LANG.default
+plugin.tx_fluid._LOCAL_LANG.en < plugin.tx_fluid._LOCAL_LANG.default
+
+page {
+	# add css files
+	includeCSS {
+		bluhmpresse = EXT:bluhmpresse/Resources/Public/css/main.css
+	}
+	# add js files
+	includeJSFooter {
+		bluhmpresse = EXT:bluhmpresse/Resources/Public/js/main.js
+	}
+}

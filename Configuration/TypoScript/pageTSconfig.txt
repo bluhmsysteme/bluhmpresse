@@ -1,0 +1,9 @@
+RTE.config {
+	tx_bluhmpresse_domain_model_article {
+		links {
+			showButtons = link, unlink
+			disableEnterParagraphs = 1
+			RTEHeightOverride = 200
+		}
+	}
+}

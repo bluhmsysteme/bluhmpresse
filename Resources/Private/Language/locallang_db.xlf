@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-03-18T09:45:28Z" product-name="bluhmpresse">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_bluhmpresse_domain_model_article">
+				<source>Article</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_article.article_date">
+				<source>Article Date</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_article.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_article.abstract">
+				<source>Abstract</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_article.bodytext">
+				<source>Bodytext</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_article.related_images">
+				<source>Related Images</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_article.pdf_file">
+				<source>Pdf File</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_article.txt_file">
+				<source>Txt File</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_article.links">
+				<source>Links</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_article.industries">
+				<source>Industries</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_article.technologies">
+				<source>Technologies</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_article.themes">
+				<source>Themes</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_article.areas">
+				<source>Areas</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_article.tabs.relations">
+				<source>Relations</source>
+			</trans-unit>
+
+			<trans-unit id="tx_bluhmpresse_domain_model_industry">
+				<source>Industry</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_industry.name">
+				<source>Name</source>
+			</trans-unit>
+
+			<trans-unit id="tx_bluhmpresse_domain_model_technology">
+				<source>Technology</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_technology.name">
+				<source>Name</source>
+			</trans-unit>
+
+			<trans-unit id="tx_bluhmpresse_domain_model_theme">
+				<source>Theme</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_theme.name">
+				<source>Name</source>
+			</trans-unit>
+
+			<trans-unit id="tx_bluhmpresse_domain_model_image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_image.image_date">
+				<source>Image Date</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_image.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_image.source">
+				<source>Source</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_image.image72">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_image.image300">
+				<source>Image300</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_image.industries">
+				<source>Industries</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_image.technologies">
+				<source>Technologies</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_image.themes">
+				<source>Themes</source>
+			</trans-unit>
+
+			<trans-unit id="tx_bluhmpresse_domain_model_area">
+				<source>Area</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_area.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_area.page">
+				<source>Page</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>
