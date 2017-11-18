@@ -36,8 +36,5 @@ $TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_bluhmpresse_domain_model_area', 'EXT:bluhmpresse/Resources/Private/Language/locallang_csh_tx_bluhmpresse_domain_model_area.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_bluhmpresse_domain_model_area');
-$TCA['tx_bluhmpresse_domain_model_area'] = array(
-
-);
 
 ?>
