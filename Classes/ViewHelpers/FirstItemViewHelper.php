@@ -8,7 +8,7 @@ namespace Mkuehnel\Bluhmpresse\ViewHelpers;
  * @subpackage Fluid
  * @version
  */
-class Tx_Bluhmpresse_ViewHelpers_FirstItemViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class FirstItemViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
     /**
      * Renders some classic dummy content: Lorem Ipsum...

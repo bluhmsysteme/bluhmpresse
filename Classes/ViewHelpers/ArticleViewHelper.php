@@ -8,7 +8,7 @@ namespace Mkuehnel\Bluhmpresse\ViewHelpers;
  * @subpackage Fluid
  * @version
  */
-class Tx_Bluhmpresse_ViewHelpers_ArticleViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class ArticleViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 	
 	/**
 	 * articleRepository
