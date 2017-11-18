@@ -1,4 +1,5 @@
 <?php
+namespace Mkuehnel\Bluhmpresse\ViewHelpers;
 
 /**
  * View helper for getting Image object by uid

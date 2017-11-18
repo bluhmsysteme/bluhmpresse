@@ -1,4 +1,5 @@
 <?php
+namespace Mkuehnel\Bluhmpresse\ViewHelpers;
 
 /**
  * View helper for getting Article object by uid

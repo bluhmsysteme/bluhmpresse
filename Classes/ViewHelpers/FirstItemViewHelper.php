@@ -1,4 +1,5 @@
 <?php
+namespace Mkuehnel\Bluhmpresse\ViewHelpers;
 
 /**
  * View helper for providing first item of item list
