@@ -18,7 +18,7 @@ class FirstItemViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
 	 * @param string $as Name of variable to assign result to
      * @return \Mkuehnel\Bluhmpresse\Domain\Model\Image
      */
-    protected $escapeOutput = false;
+
     public function render($items, $as) {
     	$item = $items->current();
 		

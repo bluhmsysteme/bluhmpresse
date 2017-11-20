@@ -16,7 +16,7 @@ class ImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelpe
 	 * @var \Mkuehnel\Bluhmpresse\Domain\Repository\ImageRepository
 	 * @inject
 	 */
-    protected $escapeOutput = false;
+
 	protected $imageRepository;
 
     /**
