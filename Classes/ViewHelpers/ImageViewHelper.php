@@ -28,7 +28,7 @@ class ImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelpe
      */
     public function render($uid, $as) {
         $image = $this->imageRepository->findByUid($uid);
-		
+
 		if($as) {
 			$this->templateVariableContainer->add($as, $image);
             $output = $this->renderChildren();
