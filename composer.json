@@ -2,7 +2,7 @@
   "name": "mkuehnel/bluhmpresse",
   "description": "Bluhm Presse Erweiterung",
   "type": "typo3-cms-extension",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "authors": [{
     "name": "Moritz Kühnel"
   }],

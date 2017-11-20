@@ -18,6 +18,7 @@ class ArticleFirstImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstr
 	 * @inject
 	 */
 	protected $imageRepository;
+    protected $escapeOutput = false;
 
 
     /**
