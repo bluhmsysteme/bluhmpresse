@@ -18,6 +18,7 @@ class ImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelpe
 	 */
 
 	protected $imageRepository;
+	protected $escapeOutput = false;
 
     /**
      * Renders some classic dummy content: Lorem Ipsum...
