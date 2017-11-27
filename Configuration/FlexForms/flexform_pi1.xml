@@ -6,7 +6,7 @@
 					<sheetTitle>Function</sheetTitle>
 				</TCEforms>
 				<type>array</type>
-				<el>
+ 				<el>
 					<switchableControllerActions>
 						<TCEforms>
 							<label>Darstellung</label>

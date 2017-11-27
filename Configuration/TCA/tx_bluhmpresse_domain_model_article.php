@@ -32,11 +32,11 @@ return array(
 	),
 	'types' => array(
 		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, article_date, title, abstract, bodytext, links,
-		                              --div--;LLL:EXT:cms/locallang_tca.xlf:pages.tabs.files,
+		                              --div--;LLL:EXT:bluhmpresse/Resources/Private/Language/locallang_db.xml:tx_bluhmpresse_domain_model_article.tabs.files,
 		                                  related_images, pdf_file, txt_file,
 		                              --div--;LLL:EXT:bluhmpresse/Resources/Private/Language/locallang_db.xml:tx_bluhmpresse_domain_model_article.tabs.relations,
 		                                  areas, industries, technologies, themes,
-		                              --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,
+		                              --div--;LLL:EXT:bluhmpresse/Resources/Private/Language/locallang_db.xml:tx_bluhmpresse_domain_model_article.tabs.access,
 		                                  starttime, endtime'),
 	),
 	'palettes' => array(

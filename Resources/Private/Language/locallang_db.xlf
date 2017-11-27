@@ -46,7 +46,12 @@
 			<trans-unit id="tx_bluhmpresse_domain_model_article.tabs.relations">
 				<source>Relations</source>
 			</trans-unit>
-
+			<trans-unit id="tx_bluhmpresse_domain_model_article.tabs.files">
+				<source>Files</source>
+			</trans-unit>
+			<trans-unit id="tx_bluhmpresse_domain_model_article.tabs.access">
+				<source>Access</source>
+			</trans-unit>
 			<trans-unit id="tx_bluhmpresse_domain_model_industry">
 				<source>Industry</source>
 			</trans-unit>
