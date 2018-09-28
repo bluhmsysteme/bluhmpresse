@@ -55,6 +55,8 @@ class ArticleRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         //$query->getQuerySettings()->setRespectEnableFields(false);
         $query->getQuerySettings()->setEnableFieldsToBeIgnored(array());
         $query->getQuerySettings()->setIncludeDeleted(false);
+        $query->getQuerySettings()->setRespectStoragePage(false);
+        
 
         $constraints = array();
         if($filter->keyword) {
@@ -84,10 +86,25 @@ class ArticleRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         }
 
         if(count($constraints)) {
+            
+             $query->matching(
+                            $query->logicalAnd($constraints)
+                        );
+             
+             
+             
+//$queryParser = $this->objectManager->get(\TYPO3\CMS\Extbase\Persistence\Generic\Storage\Typo3DbQueryParser::class);
+//\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($queryParser->convertQueryToDoctrineQueryBuilder($query)->getSQL());
+//
+//\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($queryParser->convertQueryToDoctrineQueryBuilder($query)->getParameters());
+
+
+
             return $query->matching(
                             $query->logicalAnd($constraints)
                         )
                         ->execute();
+            
         }
         else {
             return $this->findAll();

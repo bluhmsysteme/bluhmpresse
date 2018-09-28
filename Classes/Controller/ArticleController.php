@@ -87,31 +87,34 @@ class ArticleController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
 	    if($filter == NULL) {
 	        $filter = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('Mkuehnel\Bluhmpresse\Domain\Model\SearchFilter');
 	    }
-        if(!$filter->area && $this->settings['filter']['area']) {
-            $filter->area = $this->settings['filter']['area'];
-        }
-        
+            if(!$filter->area && $this->settings['filter']['area']) {
+                $filter->area = $this->settings['filter']['area'];
+            }
+            
+            if($this->request->hasArgument('area')){
+                $filter->area = $this->request->getArgument('area');
+            }
 	    $industries = $this->industryRepository->findAll();
-        $this->view->assign('industries', $industries);
-        
-        $technologies = $this->technologyRepository->findAll();
-        $this->view->assign('technologies', $technologies);
-        
-        $themes = $this->themeRepository->findAll();
-        $this->view->assign('themes', $themes);
-        
-        $years = $this->articleRepository->findYearsByFilter($filter);
-        $this->view->assign('years', $years);
-        if(!$filter->year && count($years)) {
-            $year = current($years);
-            $filter->year = $year['value'];
-        }
-        
-        $articles = $this->articleRepository->findByFilter($filter);
-        $this->view->assign('articles', $articles);
-        
-        $this->view->assign('searchFilter', $filter);
-        $this->view->assign('settings', $this->settings);
+            $this->view->assign('industries', $industries);
+
+            $technologies = $this->technologyRepository->findAll();
+            $this->view->assign('technologies', $technologies);
+
+            $themes = $this->themeRepository->findAll();
+            $this->view->assign('themes', $themes);
+
+            $years = $this->articleRepository->findYearsByFilter($filter);
+            $this->view->assign('years', $years);
+            if(!$filter->year && count($years)) {
+                $year = current($years);
+                $filter->year = $year['value'];
+            }
+
+            $articles = $this->articleRepository->findByFilter($filter);
+            $this->view->assign('articles', $articles);
+
+            $this->view->assign('searchFilter', $filter);
+            $this->view->assign('settings', $this->settings);
 	}
 
 	/**

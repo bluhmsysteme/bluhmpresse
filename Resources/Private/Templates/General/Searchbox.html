@@ -1,27 +1,38 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
 <f:layout name="Default" />
-
 <f:section name="main">
-	<h3>
-		<span>Pressesuche</span>
-	</h3>
-	<f:form name="filter" id="searchBox" object="{searchFilter}">
-		<legend>
-			Suche in:
-		</legend>
-		<v:page.menu.list pages="{settings.searchBoxPages}" showHiddenInMenu="true" as="pages">
-			<f:for each="{pages}" as="page" key="pageUid" iteration="itemIteration">
-				<f:if condition="{itemIteration.isFirst}">
-					<f:then>
-						<input type="radio" name="action" value="{f:uri.page(pageUid: pageUid)}" checked="checked"> {page.title}<br>
-					</f:then>
-					<f:else>
-						<input type="radio" name="action" value="{f:uri.page(pageUid: pageUid)}"> {page.title}<br>
-					</f:else>
-				</f:if>
-		    </f:for>
-		</v:page.menu.list>
+	<f:form name="filter" pageUid="{settings.searchBoxURL}" section="year-nav" id="searchBox" object="{searchFilter}">
+            <f:if condition="{settings.searchBoxURL}">
+                <f:then>
+                    <legend>
+                            Suche in:
+                    </legend>
+                    <v:page.menu.list pages="{settings.searchBoxPages}" showHiddenInMenu="true" as="pages">
+                        <f:for each="{pages}" as="page" key="pageUid" iteration="itemIteration">
+                            <f:if condition="{itemIteration.isFirst}">
+                                <f:then>
+                                    <f:form.radio property="area" value="{pageUid}" id="label{pageUid}" checked="checked" />
+                                    <label for="label{pageUid}">{page.title}</label><br>
+                                </f:then>
+                                <f:else>
+                                    <f:form.radio property="area" value="{pageUid}" id="label{pageUid}"/>
+                                    <label for="label{pageUid}">{page.title}</label><br></f:else>
+                            </f:if>
+                        </f:for>
+                    </v:page.menu.list>
+                    <style>.tx-bluhmpresse form#searchBox label{font-size: 1rem;}</style>
+                </f:then>
+                <f:else>
+                    <v:page.menu.list pages="{settings.searchBoxPages}" showHiddenInMenu="true" as="pages">
+                        <f:for each="{pages}" as="page" key="pageUid" iteration="itemIteration">
+                            <f:form.radio property="area" value="{pageUid}" id="label{pageUid}" style="display:none;" />
+                        </f:for>
+                    </v:page.menu.list>
+                </f:else>
+            </f:if>
+            
+            
 		<div class="powermail_fieldwrap input-keyword">
 			<f:form.textfield property="keyword" placeholder="Suchbegriff eingeben" />
 		</div>

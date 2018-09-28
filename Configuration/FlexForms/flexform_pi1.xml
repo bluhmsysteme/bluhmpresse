@@ -53,7 +53,12 @@
 							<maxitems>1</maxitems>
 							<minitems>1</minitems>
 							<show_thumbs>1</show_thumbs>
-							<default></default>
+                                                        
+  <items type="array">
+    <numIndex index="0" type="array">
+      <numIndex index="0">Alle Pressemeldungen</numIndex>
+    </numIndex>
+  </items>
 						</config>
 					   </TCEforms>
 					</settings.filter.area>
@@ -75,6 +80,16 @@
 						</config>
 					   </TCEforms>
 					</settings.searchBoxPages>
+					<settings.searchBoxURL>
+					  <TCEforms>
+						<label>Suchbox URL</label>
+						<displayCond>FIELD:switchableControllerActions:=:General->searchbox</displayCond>
+						<config>
+							<type>input</type>
+							<default></default>
+						</config>
+					   </TCEforms>
+					</settings.searchBoxURL>
 					<settings.imageDetailPid>
 					  <TCEforms>
 						<label>Pressebild Detailseite</label>

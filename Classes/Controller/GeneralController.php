@@ -64,7 +64,7 @@ class GeneralController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      * @return void
      */
     public function searchboxAction() {
-        $filter = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('Mkuehnel\Bluhmpresse\Domain\Model\SearchFilter');
+//        $filter = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('Mkuehnel\Bluhmpresse\Domain\Model\SearchFilter');
         
         $industries = $this->industryRepository->findAll();
         $this->view->assign('industries', $industries);
@@ -75,6 +75,9 @@ class GeneralController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         $themes = $this->themeRepository->findAll();
         $this->view->assign('themes', $themes);
         
+        if($this->request->hasArgument('filter')){
+            $filter = $this->request->getArgument('filter');
+        }
         $this->view->assign('searchFilter', $filter);
         $this->view->assign('settings', $this->settings);
     }
