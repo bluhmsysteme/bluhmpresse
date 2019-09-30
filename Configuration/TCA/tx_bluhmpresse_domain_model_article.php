@@ -25,7 +25,7 @@ return array(
             'endtime' => 'endtime',
         ),
         'searchFields' => 'article_date,title,abstract,bodytext,related_images,pdf_file,txt_file,links,industries,technologies,themes,areas,',
-        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('bluhmpresse') . 'Resources/Public/Icons/tx_bluhmpresse_domain_model_article.gif'
+        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('bluhmpresse') . 'Resources/Public/Icons/tx_bluhmpresse_domain_model_article.gif'
     ),
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, article_date, title, abstract, bodytext, related_images, pdf_file, txt_file, links, industries, technologies, themes, areas',

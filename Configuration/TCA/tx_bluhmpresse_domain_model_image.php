@@ -25,7 +25,7 @@ return array(
             'endtime' => 'endtime',
         ),
         'searchFields' => 'image_date,title,source,image72,image300,industries,technologies,themes,',
-        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('bluhmpresse') . 'Resources/Public/Icons/tx_bluhmpresse_domain_model_image.gif'
+        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('bluhmpresse') . 'Resources/Public/Icons/tx_bluhmpresse_domain_model_image.gif'
     ),
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, image_date, title, source, image72, industries, technologies, themes',

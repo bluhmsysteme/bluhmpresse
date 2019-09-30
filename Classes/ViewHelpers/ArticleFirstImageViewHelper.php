@@ -26,9 +26,23 @@ class ArticleFirstImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstr
      *
      * @param string $imageIds the ids of the images attached to the article
 	 * @param string $as Name of variable to assign result to
-     * @return \Mkuehnel\Bluhmpresse\Domain\Model\Image
+     * Initialize arguments
      */
-    public function render($imageIds, $as) {
+    public function initializeArguments()
+    {
+        parent::initializeArguments();
+        $this->registerArgument('imageIds', 'string', 'imageIds', true);
+        $this->registerArgument('as', 'string', 'as', true);
+    }
+
+     /**
+      * @return \Mkuehnel\Bluhmpresse\Domain\Model\Image
+     */
+
+    public function render() {
+        $imageIds = $this->arguments['imageIds'];
+        $as = $this->arguments['as'];
+
         $imageIds = explode(',', $imageIds);
         $image = $this->imageRepository->findByUid($imageIds[0]);
 		
