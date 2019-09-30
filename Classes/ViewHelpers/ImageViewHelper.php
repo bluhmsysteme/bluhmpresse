@@ -25,9 +25,19 @@ class ImageViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelpe
      *
      * @param integer $uid the uid of the image
 	 * @param string $as Name of variable to assign result to
+     */
+    public function initializeArguments()
+    {
+        parent::initializeArguments();
+        $this->registerArgument('uid', 'integer', 'uid', true);
+        $this->registerArgument('as', 'string', 'as', true);
+    }
+    /*
      * @return \Mkuehnel\Bluhmpresse\Domain\Model\Image
      */
-    public function render($uid, $as) {
+    public function render() {
+        $uid = $this->arguments['uid'];
+        $as = $this->arguments['as'];
         $image = $this->imageRepository->findByUid($uid);
 
 		if($as) {
