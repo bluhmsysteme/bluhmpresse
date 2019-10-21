@@ -33,6 +33,10 @@ namespace Mkuehnel\Bluhmpresse\Domain\Model;
  *
  */
 class Article extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+    /**
+     * @var string
+     */
+    protected $pathSegment;
 
 	/**
 	 * articleDate
@@ -140,7 +144,24 @@ class Article extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function setArticleDate($articleDate) {
 		$this->articleDate = $articleDate;
 	}
-
+    /**
+     * Get path segment
+     *
+     * @return string
+     */
+    public function getPathSegment()
+    {
+        return $this->pathSegment;
+    }
+    /**
+     * Set path segment
+     *
+     * @param string $pathSegment
+     */
+    public function setPathSegment($pathSegment)
+    {
+        $this->pathSegment = $pathSegment;
+    }
 	/**
 	 * Returns the title
 	 *

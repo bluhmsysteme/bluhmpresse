@@ -4,9 +4,7 @@ $(document).ready(function() {
         $this.attr('action', $('input[name=action]:checked', $this).val());
     });
     
-    $('.bp-list-item.image a').colorbox({
-        ajax: true
-    });
+
     //$('.bp-list-item.image a').on('click', function(e) {
         //fenster = window.open($(this).attr('href'), "Image", "width=600,height=700,resizable=yes,scrollbars=yes");
         //fenster.focus();

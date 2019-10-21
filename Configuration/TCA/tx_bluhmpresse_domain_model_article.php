@@ -31,7 +31,7 @@ return array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, article_date, title, abstract, bodytext, related_images, pdf_file, txt_file, links, industries, technologies, themes, areas',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, article_date, title, abstract, bodytext, links,
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, article_date, title, path_segment, abstract, bodytext, links,
 		                              --div--;LLL:EXT:bluhmpresse/Resources/Private/Language/locallang_db.xml:tx_bluhmpresse_domain_model_article.tabs.files,
 		                                  related_images, pdf_file, txt_file,
 		                              --div--;LLL:EXT:bluhmpresse/Resources/Private/Language/locallang_db.xml:tx_bluhmpresse_domain_model_article.tabs.relations,
@@ -43,6 +43,22 @@ return array(
 		'1' => array('showitem' => ''),
 	),
 	'columns' => array(
+        'path_segment' => array(
+            'exclude' => 1,
+            'config' => array(
+                'type' => 'slug',
+                'size' => 50,
+                'generatorOptions' => [
+                    'fields' => ['title'],
+                    'replacements' => [
+                        '/' => '-'
+                    ],
+                ],
+                'fallbackCharacter' => '-',
+                'eval' => 'uniqueInSite',
+                'default' => ''
+            ),
+        ),
 		'sys_language_uid' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
