@@ -21,9 +21,9 @@ Otherwise your changes will be overwritten the next time you save the extension 
 	<f:render partial="SearchForm" arguments="{_all}" />
 </v:page.info>
 -->
-	<f:link.page class="bluhmpresse-area {f:if(condition: '{searchFilter.area} != 1 && {searchFilter.area} != 2 && {searchFilter.area} != 3', then: 'active')}">Alle anzeigen</f:link.page>
+	<f:link.page class="bluhmpresse-area {f:if(condition: '{searchFilter.area} != 1 && {searchFilter.area} != 2 && {searchFilter.area} != 3', then: 'active')}">Alle</f:link.page>
 	<f:link.page class="bluhmpresse-area {f:if(condition: '{searchFilter.area} == 1', then: 'active')}" additionalParams="{tx_bluhmpresse_pi1: {filter: {area: '1'}}}">Messevorbereichte</f:link.page>
-	<f:link.page class="bluhmpresse-area {f:if(condition: '{searchFilter.area} == 2', then: 'active')}" additionalParams="{tx_bluhmpresse_pi1: {filter: {area: '2'}}}">Produkttexte und Fachbeiträge</f:link.page>
+	<f:link.page class="bluhmpresse-area {f:if(condition: '{searchFilter.area} == 2', then: 'active')}" additionalParams="{tx_bluhmpresse_pi1: {filter: {area: '2'}}}">Produkttexte&nbsp;und&nbsp;Fachbeiträge</f:link.page>
 	<f:link.page class="bluhmpresse-area {f:if(condition: '{searchFilter.area} == 3', then: 'active')}" additionalParams="{tx_bluhmpresse_pi1: {filter: {area: '3'}}}">Unternehmensmeldungen</f:link.page>
 
 <f:render partial="YearNav" arguments="{years:years, searchFilter:searchFilter}" />
