@@ -3031,3 +3031,11 @@ p.pdf-title {text-align:left; color:#666;}
 .c3col aside {float: left; max-width: 180px;}
 .content.c3col article.main {float:left;max-width:579px;margin-left:12px;}
 .c3col aside.aside-right {max-width:177px;float:right}
+
+a.bluhmpresse-area.active {
+	background: #e1311f;
+	color: #fff;
+}
+a.bluhmpresse-area {
+	padding:10px 15px
+}
