@@ -34,37 +34,40 @@ Otherwise your changes will be overwritten the next time you save the extension 
         </div>
     </div>
 
-    <h4><span>Pressebilder & Downloads</span></h4>
+    <h4 class="text-center mb-5"><span>Pressebilder & Downloads</span></h4>
     <div class="row pb-downloads text-center">
         <f:for each="{v:iterator.explode(content: article.relatedImages, glue: ',')}" as="imageUid">
             <bp:image uid="{imageUid}" as="image">
-                <div class="col-6 download">
+                <div class="col-12 col-md-6 download">
 
                     <f:image src="uploads/tx_bluhmpresse/{image.image72}" width="130c" height="130c"/>
                     <div class="bp-item-title">
                         <p>{image.title}</p>
                     </div>
                     <a href="/uploads/tx_bluhmpresse/{image.image72}" target="_blank"><strong>Download</strong></a>
+                    <hr>
                 </div>
             </bp:image>
         </f:for>
 
         <f:if condition="{article.pdfFile}">
-            <div class="col-6 download">
+            <div class="col-12 col-md-6 download">
                 <f:image src="EXT:bluhmpresse/Resources/Public/img/icon-pdf.jpg" alt=""/>
                 <div class="bp-item-title">
                     <p>{article.title}</p>
                 </div>
                 <a href="/uploads/tx_bluhmpresse/{article.pdfFile}" target="_blank"><strong>Download</strong></a>
+                <hr>
             </div>
         </f:if>
         <f:if condition="{article.txtFile}">
-            <div class="col-6 download">
+            <div class="col-12 col-md-6 download">
                 <f:image src="EXT:bluhmpresse/Resources/Public/img/icon-txt.jpg" alt=""/>
                 <div class="bp-item-title">
                     <p>{article.title}</p>
                 </div>
                 <a href="/uploads/tx_bluhmpresse/{article.txtFile}" target="_blank"><strong>Download</strong></a>
+                <hr>
             </div>
         </f:if>
 

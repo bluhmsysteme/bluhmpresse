@@ -16,3 +16,7 @@ a.bluhmpresse-area {
 .pb-downloads .download {
     padding-bottom:25px;
 }
+
+.pb-downloads .download hr {
+    margin: 1rem 3rem;
+}
