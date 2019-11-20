@@ -7,3 +7,12 @@ a.bluhmpresse-area {
     padding:10px 15px;
     line-height: 50px;
 }
+.bp-item-title {
+    font-size:.85em;
+}
+.bp-item-title p {
+    margin-bottom:0;
+}
+.pb-downloads .download {
+    padding-bottom:25px;
+}
