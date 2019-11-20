@@ -21,8 +21,11 @@ Otherwise your changes will be overwritten the next time you save the extension 
 	<f:render partial="SearchForm" arguments="{_all}" />
 </v:page.info>
 -->
+	<h1>Presseveröffentlichungen</h1>
+	<p class="mb-4">Herzlich willkommen im Pressebereich der Bluhm Systeme GmbH. Hier finden Sie alle aktuellen Informationen rund um das Unternehmen. Haben Sie eine Frage zu unserem Pressebereich oder zu unseren Pressemitteilungen? Dann nutzen Sie gerne unser <f:link.page pageUid="22">Kontaktformular</f:link.page></p>
+
 	<f:link.page class="bluhmpresse-area {f:if(condition: '{searchFilter.area} != 1 && {searchFilter.area} != 2 && {searchFilter.area} != 3', then: 'active')}">Alle</f:link.page>
-	<f:link.page class="bluhmpresse-area {f:if(condition: '{searchFilter.area} == 1', then: 'active')}" additionalParams="{tx_bluhmpresse_pi1: {filter: {area: '1'}}}">Messevorbereichte</f:link.page>
+	<f:link.page class="bluhmpresse-area {f:if(condition: '{searchFilter.area} == 1', then: 'active')}" additionalParams="{tx_bluhmpresse_pi1: {filter: {area: '1'}}}">Messevorberichte</f:link.page>
 	<f:link.page class="bluhmpresse-area {f:if(condition: '{searchFilter.area} == 2', then: 'active')}" additionalParams="{tx_bluhmpresse_pi1: {filter: {area: '2'}}}">Produkttexte&nbsp;und&nbsp;Fachbeiträge</f:link.page>
 	<f:link.page class="bluhmpresse-area {f:if(condition: '{searchFilter.area} == 3', then: 'active')}" additionalParams="{tx_bluhmpresse_pi1: {filter: {area: '3'}}}">Unternehmensmeldungen</f:link.page>
 
