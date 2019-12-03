@@ -1,11 +1,12 @@
 <?php
+
 namespace Mkuehnel\Bluhmpresse\Controller;
 
 /***************************************************************
  *  Copyright notice
  *
  *  (c) 2014 Andreas Knoll <andreas.knoll@visia.de>, Visia GmbH
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -32,16 +33,17 @@ namespace Mkuehnel\Bluhmpresse\Controller;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class ArticleController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class ArticleController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+{
 
-	/**
-	 * articleRepository
-	 *
-	 * @var \Mkuehnel\Bluhmpresse\Domain\Repository\ArticleRepository
-	 * @inject
-	 */
-	protected $articleRepository;
-    
+    /**
+     * articleRepository
+     *
+     * @var \Mkuehnel\Bluhmpresse\Domain\Repository\ArticleRepository
+     * @inject
+     */
+    protected $articleRepository;
+
     /**
      * industryRepository
      *
@@ -49,15 +51,15 @@ class ArticleController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      * @inject
      */
     protected $industryRepository;
-    
-     /**
+
+    /**
      * technologyRepository
      *
      * @var \Mkuehnel\Bluhmpresse\Domain\Repository\TechnologyRepository
      * @inject
      */
     protected $technologyRepository;
-    
+
     /**
      * themeRepository
      *
@@ -65,11 +67,12 @@ class ArticleController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      * @inject
      */
     protected $themeRepository;
-    
-     /**
+
+    /**
      * @return void
      */
-    protected function initializeListAction(){
+    protected function initializeListAction()
+    {
         if ($this->arguments->hasArgument('filter')) {
             $propertyMappingConfiguration = $this->arguments['filter']->getPropertyMappingConfiguration();
             $propertyMappingConfiguration->allowAllProperties();
@@ -77,55 +80,91 @@ class ArticleController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         }
     }
 
-	/**
-	 * action list
-	 *
+    /**
+     * @return void
+     */
+    protected function initializeSliderAction()
+    {
+        if ($this->arguments->hasArgument('filter')) {
+            $propertyMappingConfiguration = $this->arguments['filter']->getPropertyMappingConfiguration();
+            $propertyMappingConfiguration->allowAllProperties();
+            $propertyMappingConfiguration->setTypeConverterOption('TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter', \TYPO3\CMS\Extbase\Property\TypeConverter\PersistentObjectConverter::CONFIGURATION_CREATION_ALLOWED, TRUE);
+        }
+    }
+
+    /**
+     * action list
+     *
      * @param \Mkuehnel\Bluhmpresse\Domain\Model\SearchFilter $filter
-	 * @return void
-	 */
-	public function listAction(\Mkuehnel\Bluhmpresse\Domain\Model\SearchFilter $filter = NULL) {
-	    if($filter == NULL) {
-	        $filter = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('Mkuehnel\Bluhmpresse\Domain\Model\SearchFilter');
-	    }
-            if(!$filter->area && $this->settings['filter']['area']) {
-                $filter->area = $this->settings['filter']['area'];
-            }
-            
-            if($this->request->hasArgument('area')){
-                $filter->area = $this->request->getArgument('area');
-            }
-	    $industries = $this->industryRepository->findAll();
-            $this->view->assign('industries', $industries);
+     * @return void
+     */
+    public function listAction(\Mkuehnel\Bluhmpresse\Domain\Model\SearchFilter $filter = NULL)
+    {
+        if ($filter == NULL) {
+            $filter = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('Mkuehnel\Bluhmpresse\Domain\Model\SearchFilter');
+        }
+        if (!$filter->area && $this->settings['filter']['area']) {
+            $filter->area = $this->settings['filter']['area'];
+        }
 
-            $technologies = $this->technologyRepository->findAll();
-            $this->view->assign('technologies', $technologies);
+        if ($this->request->hasArgument('area')) {
+            $filter->area = $this->request->getArgument('area');
+        }
+        $industries = $this->industryRepository->findAll();
+        $this->view->assign('industries', $industries);
 
-            $themes = $this->themeRepository->findAll();
-            $this->view->assign('themes', $themes);
+        $technologies = $this->technologyRepository->findAll();
+        $this->view->assign('technologies', $technologies);
 
-            $years = $this->articleRepository->findYearsByFilter($filter);
-            $this->view->assign('years', $years);
-            if(!$filter->year && count($years)) {
-                $year = current($years);
-                $filter->year = $year['value'];
-            }
+        $themes = $this->themeRepository->findAll();
+        $this->view->assign('themes', $themes);
 
-            $articles = $this->articleRepository->findByFilter($filter);
-            $this->view->assign('articles', $articles);
+        $years = $this->articleRepository->findYearsByFilter($filter);
+        $this->view->assign('years', $years);
+        if (!$filter->year && count($years)) {
+            $year = current($years);
+            $filter->year = $year['value'];
+        }
 
-            $this->view->assign('searchFilter', $filter);
-            $this->view->assign('settings', $this->settings);
-	}
+        $articles = $this->articleRepository->findByFilter($filter);
+        $this->view->assign('articles', $articles);
 
-	/**
-	 * action show
-	 *
-	 * @param \Mkuehnel\Bluhmpresse\Domain\Model\Article $article
-	 * @return void
-	 */
-	public function showAction(\Mkuehnel\Bluhmpresse\Domain\Model\Article $article) {
-		$this->view->assign('article', $article);
-	}
+        $this->view->assign('searchFilter', $filter);
+        $this->view->assign('settings', $this->settings);
+    }
+
+    /**
+     * action list
+     *
+     * @param \Mkuehnel\Bluhmpresse\Domain\Model\SearchFilter $filter
+     * @return void
+     */
+    public function sliderAction(\Mkuehnel\Bluhmpresse\Domain\Model\SearchFilter $filter = NULL, \Mkuehnel\Bluhmpresse\Domain\Model\Article $article = NULL)
+    {
+
+
+
+        $articles = $this->articleRepository->findByFilter($filter);
+        $this->view->assign('articles', $articles);
+        $this->view->assign('arguments', $this->request->getArguments());
+        //$this->view->assign('action', $this->request);
+
+        $this->view->assign('settings', $this->settings);
+
+
+    }
+
+    /**
+     * action show
+     *
+     * @param \Mkuehnel\Bluhmpresse\Domain\Model\Article $article
+     * @return void
+     */
+    public function showAction(\Mkuehnel\Bluhmpresse\Domain\Model\Article $article)
+    {
+        $this->view->assign('article', $article);
+    }
 
 }
+
 ?>

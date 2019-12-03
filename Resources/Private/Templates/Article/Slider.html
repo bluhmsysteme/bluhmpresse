@@ -1,0 +1,74 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+{namespace bp=Mkuehnel\Bluhmpresse\ViewHelpers}
+<f:layout name="Default"/>
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+    <f:if condition="({arguments.action} == 'show') || {arguments.filter}">
+        <f:then></f:then>
+        <f:else>
+
+            <div id="BluhmpresseCarousel" class="carousel slide" data-ride="carousel">
+
+                <div class="carousel-inner container">
+                    <f:for each="{articles}" as="article" iteration="iterator">
+                        <f:if condition="{iterator.cycle} < 4">
+                            <div class="carousel-item {f:if(condition: '{iterator.cycle} == 1', then: 'active ', else: '')}">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <bp:articleFirstImage imageIds="{article.relatedImages}" as="image">
+                                            <f:if condition="{image}">
+                                                <f:image src="uploads/tx_bluhmpresse/{image.image72}" width="140c"
+                                                         height="140c"/>
+                                            </f:if>
+                                        </bp:articleFirstImage>
+                                    </div>
+                                    <div class="col">
+                                        <div class="bp-item-headline">
+                                            <h2 class="bp-item-title">{article.title}</h2>
+                                            <span class="bp-item-date">
+
+                            <f:format.date format="d.m.Y">{article.articleDate}</f:format.date></span>
+                                        </div>
+                                        <div class="bp-item-abstract">
+                                            {article.abstract}
+                                        </div>
+                                        <f:link.action class="bluhmpresse-showarticle" action="show"
+                                                       arguments="{article : article}">Weiter zur Pressemeldung
+                                        </f:link.action>
+                                    </div>
+                                    <br class="clear">
+                                </div>
+                            </div>
+                        </f:if>
+                    </f:for>
+
+                </div>
+                <ol class="carousel-indicators">
+                    <li data-target="#BluhmpresseCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#BluhmpresseCarousel" data-slide-to="1"></li>
+                    <li data-target="#BluhmpresseCarousel" data-slide-to="2"></li>
+                </ol>
+                <a class="carousel-control-prev" href="#BluhmpresseCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#BluhmpresseCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </f:else>
+    </f:if>
+
+</f:section>

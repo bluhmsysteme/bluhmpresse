@@ -27,6 +27,7 @@ class ArticleViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHel
      * @return \Mkuehnel\Bluhmpresse\Domain\Model\Image
      */
     public function render($uid, $as) {
+
         $article = $this->articleRepository->findByUid($uid);
 		
 		if($as) {

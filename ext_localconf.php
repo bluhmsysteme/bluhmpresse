@@ -10,14 +10,16 @@ if (!defined('TYPO3_MODE')) {
 		'Article' => 'list, show',
 		'Image' => 'list, show',
 		'General' => 'searchbox',
-		'PresseCD' => 'download'
+		'PresseCD' => 'download',
+        'Slider' => 'list,show'
 	),
 	// non-cacheable actions
 	array(
 		'Article' => 'list, show',
 		'Image' => 'list, show',
 		'General' => 'searchbox',
-		'PresseCD' => 'download'
+		'PresseCD' => 'download',
+        'Slider' => 'list,show'
 	)
 );
 /*

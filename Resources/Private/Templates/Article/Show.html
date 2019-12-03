@@ -17,13 +17,6 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
     <div class="bp-item-detail article">
         <f:flashMessages/>
-
-        <script>
-            if (document.referrer && document.referrer.indexOf('<f:uri.page />') != -1) {
-                document.write('<h3><span><a href="' + document.referrer + '"><< Zurück zur Übersicht</a></span></h3>');
-            }
-        </script>
-
         <div class="bp-item-headline">
             <span class="bp-item-date"><f:format.date format="d.m.Y">{article.articleDate}</f:format.date></span><span
                 class="bp-item-title">{article.title}</span>
@@ -80,4 +73,10 @@ Otherwise your changes will be overwritten the next time you save the extension 
             </div>
         </f:if>
     </div>
+
+    <script>
+        if (document.referrer && document.referrer.indexOf('<f:uri.page />') != -1) {
+            document.write('<h3><span><a href="' + document.referrer + '"><< Zurück zur Übersicht</a></span></h3>');
+        }
+    </script>
 </f:section>
