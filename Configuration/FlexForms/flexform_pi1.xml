@@ -40,7 +40,7 @@
                                     </numIndex>
                                     <numIndex index="6">
                                         <numIndex index="0">Presse Slider</numIndex>
-                                        <numIndex index="1">Article->slider;;Article->show</numIndex>
+                                        <numIndex index="1">Article->slider;</numIndex>
                                     </numIndex>
                                 </items>
                             </config>
