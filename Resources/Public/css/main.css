@@ -59,6 +59,7 @@ div#BluhmpresseCarousel {
 .presseteaser {
     width: 400px;
     position:relative;
+    margin-bottom:25px;
 }
 .presseteaser-inner {
     background: rgba(255, 255, 255, 0.78);
