@@ -143,9 +143,10 @@ class ArticleController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     {
 
 
-
         $articles = $this->articleRepository->findByFilter($filter);
+
         $this->view->assign('articles', $articles);
+
         $this->view->assign('arguments', $this->request->getArguments());
         //$this->view->assign('action', $this->request);
 

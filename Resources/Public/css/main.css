@@ -29,12 +29,40 @@ a.bluhmpresse-showarticle {
 }
 
 div#BluhmpresseCarousel {
-    background: url(/typo3conf/ext/bluhmpresse/Resources/Public/img/presseheader-bg.jpg);
-    background-size: cover;
-    background-position: center;
-    padding-top: 25px;
     margin-top: -2.3rem;
-    margin-bottom: 45px;
+
+}
+#BluhmpresseCarousel a.bluhmpresse-showarticle {
+    position: absolute;
+    bottom: -34px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.78);
+    z-index: 9999;
+    padding: 5px 20px;
+}
+
+#BluhmpresseCarousel a.bluhmpresse-showarticle:before {
+    position: absolute;
+    content: ' ';
+    left: -20px;
+    bottom: 0px;
+    height: 0;
+    width: 10px;
+    border-right: 20px solid rgba(255, 255, 255, 0.78);
+    border-top: 0px solid transparent;
+    border-bottom: 34px solid transparent;
+}
+
+.presseslider-bg {
+    min-height: 250px;
+}
+.presseteaser {
+    width: 400px;
+    position:relative;
+}
+.presseteaser-inner {
+    background: rgba(255, 255, 255, 0.78);
+    padding: 25px;
 }
 #BluhmpresseCarousel .carousel-indicators {
     position: static;
@@ -54,9 +82,11 @@ div#BluhmpresseCarousel {
 }
 
 #BluhmpresseCarousel .bp-item-title {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    line-height: 27px;
     border: none;
     margin-bottom: 0;
     font-weight: bold;
     color: #333;
+    font-weight: normal;
 }

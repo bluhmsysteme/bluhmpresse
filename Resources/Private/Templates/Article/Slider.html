@@ -14,40 +14,38 @@ List.html: keep
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
+
+    <bp:firstitem arguments={as:article, items:articles}/>
+
     <f:if condition="({arguments.action} == 'show') || {arguments.filter}">
         <f:then></f:then>
         <f:else>
 
             <div id="BluhmpresseCarousel" class="carousel slide" data-ride="carousel">
 
-                <div class="carousel-inner container">
+                <div class="carousel-inner">
                     <f:for each="{articles}" as="article" iteration="iterator">
                         <f:if condition="{iterator.cycle} < 4">
                             <div class="carousel-item {f:if(condition: '{iterator.cycle} == 1', then: 'active ', else: '')}">
-                                <div class="row">
-                                    <div class="col-auto">
-                                        <bp:articleFirstImage imageIds="{article.relatedImages}" as="image">
-                                            <f:if condition="{image}">
-                                                <f:image src="uploads/tx_bluhmpresse/{image.image72}" width="140c"
-                                                         height="140c"/>
-                                            </f:if>
-                                        </bp:articleFirstImage>
-                                    </div>
-                                    <div class="col">
-                                        <div class="bp-item-headline">
-                                            <h2 class="bp-item-title">{article.title}</h2>
-                                            <span class="bp-item-date">
+                                <div class="presseslider-bg"
+                                     style="background: url(/typo3conf/ext/bluhmpresse/Resources/Public/img/slide-bg{iterator.cycle}.jpg)">
+                                    <div class="container">
+                                        <div class="presseteaser">
+                                            <div class="presseteaser-inner">
+                                                <div class="bp-item-headline">
+                                                    <h2 class="bp-item-title">{article.title}</h2>
+                                                    <span class="bp-item-date">
 
                             <f:format.date format="d.m.Y">{article.articleDate}</f:format.date></span>
+                                                </div>
+                                            </div>
+                                            <f:link.action class="bluhmpresse-showarticle" action="show"
+                                                           arguments="{article : article}">Weiter zur Pressemeldung
+                                            </f:link.action>
                                         </div>
-                                        <div class="bp-item-abstract">
-                                            {article.abstract}
-                                        </div>
-                                        <f:link.action class="bluhmpresse-showarticle" action="show"
-                                                       arguments="{article : article}">Weiter zur Pressemeldung
-                                        </f:link.action>
+
+                                        <br class="clear">
                                     </div>
-                                    <br class="clear">
                                 </div>
                             </div>
                         </f:if>

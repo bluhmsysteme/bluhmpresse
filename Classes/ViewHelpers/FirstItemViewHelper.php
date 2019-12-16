@@ -22,7 +22,6 @@ class FirstItemViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewH
 
     public function render($items, $as) {
     	$item = $items->current();
-		
 		if($as) {
 			$this->templateVariableContainer->add($as, $item);
             $output = $this->renderChildren();
