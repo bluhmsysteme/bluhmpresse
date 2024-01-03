@@ -1624,11 +1624,11 @@ table.calendar {border: none; margin: 0 1px; max-width: 99.8%;}
 .content>aside section.menu>ul li:first-child {border-top: none;}
 .content>aside section.menu>ul li a {display: block; padding: 7px 20px 7px 10px;}
 .content>aside section.menu>ul li a:hover {background: #3f3f3f; color: #fff;}
-.content>aside section.menu>ul li.current-menu-item>a {background-color: #e1311f; color: #fff;}
+.content>aside section.menu>ul li.current-menu-item>a {background-color: #e60005; color: #fff;}
 .content>aside section.menu>ul li:before {display: none;}
 .content>aside section.menu>ul li.parent>a {background: url("images/nav-right.png") 95% 50% no-repeat;}
 .content>aside section.menu>ul li.parent>a:hover {background-color: #3f3f3f}
-.content>aside section.menu>ul li.parent.expanded>a {background: url("images/nav-down.png") 95% 50% no-repeat #e1311f;color:#fff}
+.content>aside section.menu>ul li.parent.expanded>a {background: url("images/nav-down.png") 95% 50% no-repeat #e60005;color:#fff}
 
 .content>aside section.menu>ul li.parent>ul {display: none;}
 .content>aside section.menu>ul li.parent.expanded>ul {display: block;}
@@ -2811,7 +2811,7 @@ dl.powermail_all dd {
 	font-size: 11px;
 	border: 2px solid #ddd;
 	padding: 4px 10px 4px 10px;
-	background: #e1311f; /* Old browsers */
+	background: #e60005; /* Old browsers */
 }
 .greenPopup .formErrorContent {
 	background: #33be40;
@@ -2846,7 +2846,7 @@ body.rtl .formError .formErrorArrow {
 	line-height: 0;
 	font-size: 0;
 	display: block;
-	background: #e1311f; /* Old browsers */
+	background: #e60005; /* Old browsers */
 }
 .formError .formErrorArrowBottom div {
 	box-shadow: none;
@@ -3033,7 +3033,7 @@ p.pdf-title {text-align:left; color:#666;}
 .c3col aside.aside-right {max-width:177px;float:right}
 
 a.bluhmpresse-area.active {
-	background: #e1311f;
+	background: #e60005;
 	color: #fff;
 }
 a.bluhmpresse-area {
